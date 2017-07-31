@@ -8,6 +8,7 @@ function iniciar(){
        var grosor=5;
        var color;
        var transparencia=1;
+       var texto1;
        
        $('#canvas').on('mousedown',presionar);
        $('#canvas').on('mousemove',pintar);
@@ -27,7 +28,15 @@ function iniciar(){
        	    var tra=$('#num_trans').val();
        	    transparencia=tra;
        });
-
+       
+       $('#acep_titulo').on('click',function(){
+            texto1=$('#titulo').val();
+            contexto.font="bolt 40px Helvetica";
+            contexto.fillStyle="black";
+            contexto.fillText(texto1,10,canvas1.height-15);
+            contexto.fillStyle="white";
+            contexto.fillText(texto1,13,canvas1.height-12);
+       });
 
        function presionar(){
 
